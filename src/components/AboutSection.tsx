@@ -4,22 +4,22 @@ const highlights = [
   {
     icon: Brain,
     title: "Machine Learning",
-    description: "Deep expertise in ML algorithms, neural networks, and model optimization.",
+    description: "Deep expertise in ML algorithms, neural networks, XGBoost, and model optimization.",
   },
   {
     icon: Database,
     title: "Data Engineering",
-    description: "Building robust data pipelines and scalable analytics infrastructure.",
+    description: "Building robust ETL pipelines, feature engineering, and scalable data infrastructure.",
   },
   {
     icon: LineChart,
-    title: "Analytics",
-    description: "Transforming raw data into actionable business intelligence.",
+    title: "Analytics & BI",
+    description: "Power BI, Tableau, and data-driven insights for executive decision-making.",
   },
   {
     icon: Sparkles,
-    title: "AI Innovation",
-    description: "Developing cutting-edge AI solutions for real-world problems.",
+    title: "NLP & RAG",
+    description: "Building intelligent chatbots, semantic search, and LLM-powered applications.",
   },
 ];
 
@@ -31,15 +31,14 @@ export const AboutSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I'm a passionate AI Engineer and Data Scientist with expertise in building 
-            end-to-end machine learning solutions. With a strong foundation in statistics, 
-            programming, and domain knowledge, I specialize in transforming complex data 
-            challenges into scalable, production-ready AI systems.
+            AI Engineer and Data Scientist with a Master's in Business Analytics & Artificial Intelligence 
+            from UT Dallas. I specialize in building end-to-end machine learning systems, NLP solutions, 
+            and RAG-powered applications that deliver measurable business value.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-            My journey spans from developing predictive models and recommendation systems 
-            to deploying NLP solutions and computer vision applications. I thrive on 
-            solving complex problems and continuously learning new technologies.
+            My experience spans enterprise GRC AI platforms, conversational AI chatbots, predictive modeling, 
+            and analytics dashboards. I thrive on transforming complex data challenges into production-ready 
+            AI solutions that drive real impact.
           </p>
         </div>
 

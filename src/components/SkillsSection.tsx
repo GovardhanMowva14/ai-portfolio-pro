@@ -1,27 +1,27 @@
 const skillCategories = [
   {
-    title: "Programming Languages",
-    skills: ["Python", "R", "SQL", "JavaScript", "TypeScript", "Scala"],
+    title: "Programming",
+    skills: ["Python", "SQL", "R"],
   },
   {
-    title: "Machine Learning",
-    skills: ["TensorFlow", "PyTorch", "Scikit-learn", "XGBoost", "LightGBM", "Keras"],
+    title: "Machine Learning & AI",
+    skills: ["TensorFlow", "PyTorch", "Transformers", "XGBoost", "LSTMs", "SBERT", "FAISS", "RAG", "NLP"],
   },
   {
-    title: "Data Engineering",
-    skills: ["Apache Spark", "Airflow", "dbt", "Kafka", "Snowflake", "BigQuery"],
+    title: "Data Engineering & Analytics",
+    skills: ["ETL", "Feature Engineering", "Data Cleaning", "Model Deployment", "Predictive Modeling", "A/B Testing"],
   },
   {
-    title: "Cloud & MLOps",
-    skills: ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "MLflow"],
+    title: "Visualization",
+    skills: ["Power BI", "Tableau", "Excel (Pivot Tables, VLOOKUP, Automation)"],
   },
   {
-    title: "Analytics & BI",
-    skills: ["Tableau", "Power BI", "Looker", "Jupyter", "Pandas", "NumPy"],
+    title: "Cloud & Tools",
+    skills: ["Azure", "AWS", "Databricks", "Git", "Docker", "Jira", "Confluence"],
   },
   {
-    title: "AI & NLP",
-    skills: ["OpenAI", "LangChain", "Hugging Face", "BERT", "GPT", "LLMs"],
+    title: "Methods",
+    skills: ["NLP", "Deep Learning", "Predictive Modeling", "Analytics"],
   },
 ];
 
