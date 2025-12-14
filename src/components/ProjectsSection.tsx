@@ -1,51 +1,100 @@
-import { ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "Real-Time Fraud Detection System",
-    description:
-      "Built an end-to-end fraud detection pipeline processing 100K+ transactions/second with 99.7% accuracy using ensemble ML models.",
-    tags: ["Python", "Spark", "XGBoost", "Kafka", "AWS"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
+    title: "UTD JSOM Conversational AI Chatbot",
+    featured: true,
+    bullets: [
+      "Designed and developed an enterprise-grade conversational AI chatbot for the UT Dallas Jindal School of Management (JSOM)",
+      "Implemented end-to-end pipeline including web scraping (Selenium, BeautifulSoup), data cleaning, and structured storage in MongoDB",
+      "Built semantic search using Sentence-BERT embeddings and FAISS for efficient retrieval",
+      "Integrated Rasa for NLU and backend action handling, including intent recognition and entity extraction",
+      "Evaluated and experimented with multiple LLMs including Mistral, OpenAI, FLAN-T5, and IBM Watson to balance accuracy and performance",
+      "Deployed an interactive Chainlit frontend and implemented user feedback collection to continuously improve response quality",
+    ],
+    tags: ["Python", "NLP", "RAG", "Sentence-BERT", "FAISS", "Rasa", "MongoDB", "Chainlit", "Selenium"],
   },
   {
-    title: "NLP Document Intelligence",
-    description:
-      "Developed a document understanding platform using transformer models for entity extraction, classification, and summarization.",
-    tags: ["PyTorch", "BERT", "FastAPI", "Docker", "GCP"],
-    github: "https://github.com",
+    title: "Medicare Billing Analytics Dashboard",
+    featured: false,
+    bullets: [
+      "Designed and developed an interactive Power BI dashboard to analyze Medicare billing data for a simulated healthcare facility",
+      "Built KPIs for Total Billing Amount, Insurance Coverage, Out-of-Pocket Costs, Room Charges, and Average Length of Stay",
+      "Created multiple DAX measures to evaluate billing performance per patient, procedure, and service type",
+      "Segmented costs by diagnosis, procedures, and departments",
+      "Used geospatial visuals to analyze city/state billing distribution",
+      "Ensured healthcare privacy by anonymizing sensitive patient data",
+    ],
+    tags: ["Power BI", "DAX", "Excel", "Data Modeling"],
   },
   {
-    title: "Recommendation Engine",
-    description:
-      "Designed and deployed a hybrid recommendation system combining collaborative filtering and content-based approaches for e-commerce.",
-    tags: ["TensorFlow", "Redis", "PostgreSQL", "Kubernetes"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
+    title: "Emotion Detection using Multi-Label Classification",
+    featured: false,
+    bullets: [
+      "Developed multi-label NLP models to classify tweets into emotions such as anger, joy, sadness, and optimism",
+      "Implemented LSTM and feed-forward neural networks using Hugging Face Trainer",
+      "Fine-tuned transformer models including RoBERTa, DistilBERT, and DistilRoBERTa",
+      "Explored instruction-tuned and zero-shot models including Qwen and LLaMA",
+      "Optimized experiments using Weights & Biases for tracking and reproducibility",
+      "Achieved top-ranking performance in an in-class Kaggle competition",
+    ],
+    tags: ["Python", "NLP", "LSTM", "RoBERTa", "DistilBERT", "LLaMA"],
   },
   {
-    title: "Time Series Forecasting Platform",
-    description:
-      "Created an automated forecasting solution for supply chain optimization, reducing inventory costs by 20%.",
-    tags: ["Prophet", "LSTM", "Airflow", "Snowflake", "Tableau"],
-    github: "https://github.com",
+    title: "Credit Risk Prediction (American Express Dataset)",
+    featured: false,
+    bullets: [
+      "Built XGBoost and Neural Network models to predict credit default risk",
+      "Performed data preprocessing, feature engineering, and hyperparameter tuning",
+      "Conducted bias–variance analysis and model comparison",
+      "Applied SHAP for model explainability",
+      "Achieved an AUC of 0.92 on validation data",
+    ],
+    tags: ["XGBoost", "Neural Networks", "SHAP", "Applied Machine Learning"],
   },
   {
-    title: "Computer Vision Quality Control",
-    description:
-      "Implemented an automated visual inspection system for manufacturing using CNNs, detecting defects with 98% precision.",
-    tags: ["PyTorch", "OpenCV", "Edge Deployment", "Azure"],
-    github: "https://github.com",
+    title: "Spam Detection using Machine Learning",
+    featured: false,
+    bullets: [
+      "Built a machine learning pipeline to detect spam messages using NLP and feature engineering",
+      "Performed text preprocessing and duplicate removal",
+      "Engineered custom features including message length, special characters, capital letters, and spelling errors",
+      "Implemented TF-IDF and combined feature pipelines with Logistic Regression",
+      "Evaluated models using F1-score and learning curves",
+    ],
+    tags: ["Python", "Scikit-learn", "TF-IDF", "NLP", "Pandas"],
   },
   {
-    title: "LLM-Powered Analytics Assistant",
-    description:
-      "Built a conversational AI assistant that enables natural language queries on enterprise data using RAG architecture.",
-    tags: ["LangChain", "OpenAI", "Pinecone", "React", "FastAPI"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
+    title: "Real-Time Hand Gesture Recognition System",
+    featured: false,
+    bullets: [
+      "Developed a real-time hand gesture recognition system using webcam video input",
+      "Used OpenCV and MediaPipe to detect hand landmarks and recognize gestures",
+    ],
+    tags: ["Python", "OpenCV", "MediaPipe"],
+  },
+  {
+    title: "HR Analytics – Employee Turnover Analysis",
+    featured: false,
+    bullets: [
+      "Achieved 98% data cleanliness and standardized HR datasets",
+      "Developed complex SQL queries using IBM HR data",
+      "Built visualizations to extract insights on employee turnover",
+      "Achieved a 95% correlation with real-world HR trends",
+    ],
+    tags: ["SQL", "Data Analysis"],
+  },
+  {
+    title: "Secure Fingerprint-Based Electronic Voting Machine",
+    featured: false,
+    bullets: [
+      "Engineered biometric fingerprint authentication for secure voter identification",
+      "Integrated OTP verification using GSM modules",
+      "Implemented alcohol sensors for real-time voter sobriety monitoring",
+      "Enhanced system security and voting integrity",
+    ],
+    tags: ["Embedded Systems", "Biometrics", "Security"],
   },
 ];
 
@@ -62,19 +111,33 @@ export const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group p-6 bg-card border border-border hover:border-primary/50 transition-all duration-300 flex flex-col"
+              className={`group p-6 bg-card border transition-all duration-300 flex flex-col ${
+                project.featured 
+                  ? "border-primary/50 md:col-span-2 bg-primary/5" 
+                  : "border-border hover:border-primary/50"
+              }`}
             >
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4 flex-grow">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-3">
+                {project.featured && (
+                  <Badge variant="default" className="flex items-center gap-1">
+                    <Star className="w-3 h-3" />
+                    Featured
+                  </Badge>
+                )}
+                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                  {project.title}
+                </h3>
+              </div>
+              <ul className="text-muted-foreground text-sm mb-4 flex-grow space-y-2 list-disc list-inside">
+                {project.bullets.map((bullet, bulletIndex) => (
+                  <li key={bulletIndex}>{bullet}</li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
@@ -83,32 +146,6 @@ export const ProjectsSection = () => {
                     {tag}
                   </span>
                 ))}
-              </div>
-              <div className="flex gap-3">
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    <Github className="w-4 h-4" />
-                    Code
-                  </a>
-                </Button>
-                {project.demo && (
-                  <Button size="sm" asChild>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
               </div>
             </div>
           ))}
