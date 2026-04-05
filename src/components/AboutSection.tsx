@@ -1,4 +1,5 @@
 import { Brain, Database, LineChart, Sparkles } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const highlights = [
   {
