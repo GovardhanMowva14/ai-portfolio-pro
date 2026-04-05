@@ -17,6 +17,14 @@ const certifications = [
     name: "Salesforce AI Associate",
     issuer: "Salesforce",
   },
+  {
+    name: "Databricks Gen AI Engineer",
+    issuer: "Databricks",
+  },
+  {
+    name: "SnowPro Core",
+    issuer: "Snowflake",
+  },
 ];
 
 export const CertificationsSection = () => {
@@ -31,7 +39,7 @@ export const CertificationsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {certifications.map((cert, index) => (
             <div
               key={index}
