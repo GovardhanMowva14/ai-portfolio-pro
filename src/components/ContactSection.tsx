@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com",
-    href: "https://github.com",
+    value: "github.com/GovardhanMowva14",
+    href: "https://github.com/GovardhanMowva14",
   },
   {
     icon: MapPin,

@@ -17,6 +17,14 @@ const certifications = [
     name: "Salesforce AI Associate",
     issuer: "Salesforce",
   },
+  {
+    name: "Databricks Gen AI Engineer",
+    issuer: "Databricks",
+  },
+  {
+    name: "SnowPro Core",
+    issuer: "Snowflake",
+  },
 ];
 
 export const CertificationsSection = () => {

@@ -2,26 +2,15 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    title: "AI Engineer",
+    title: "Agentic AI Engineer",
     company: "WorldLink US",
     location: "Frisco, TX",
     period: "Sep 2025 – Present",
     description: [
-      "Built GRC AI platform (CodifAI) using RAG + FAISS, improving PRC mapping accuracy by 30% across FFIEC & NIST frameworks",
-      "Engineered an automated policy-scanner pipeline processing 5,000+ documents, reducing manual review time by 20%",
-      "Developed an LLM-powered policy chat assistant using BM25 + embeddings, increasing query precision by 25%",
-      "Collaborated cross-functionally to deploy scalable, production-grade AI services",
-    ],
-  },
-  {
-    title: "AI Engineer",
-    company: "ImpacterAI",
-    location: "United States",
-    period: "Sep 2025 – Sep 2025",
-    description: [
-      "Built large-scale Python scrapers capturing 10,000+ property listing records with 98% accuracy",
-      "Consolidated multi-source datasets, reducing redundancy by 25% and improving data completeness by 30%",
-      "Standardized schemas and automated data merging pipelines to improve data quality",
+      "Built an agentic GRC AI pipeline using LLMs, Transformers, FAISS, improving PRC extraction accuracy by 30%",
+      "Automated regulatory document ingestion using OCR, embeddings, and MLOps (500+ documents, 20% reduction in manual work)",
+      "Developed GenAI compliance agents using BM25 + embeddings (25% improvement in query precision)",
+      "Implemented confidence scoring and validation logic to reduce false positives and improve consistency",
     ],
   },
   {
