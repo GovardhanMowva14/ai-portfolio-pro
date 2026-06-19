@@ -47,23 +47,23 @@ export const ContactSection = () => {
                 key={index}
                 className="p-6 bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="w-12 h-12 flex-shrink-0 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-sm text-muted-foreground">{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="font-medium hover:text-primary transition-colors duration-200"
+                        className="font-medium hover:text-primary transition-colors duration-200 block truncate"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="font-medium">{item.value}</p>
+                      <p className="font-medium truncate">{item.value}</p>
                     )}
                   </div>
                 </div>
