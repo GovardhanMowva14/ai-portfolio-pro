@@ -15,7 +15,7 @@ const projects = [
       "Deployed Chainlit frontend with feedback collection",
     ],
     tags: ["Python", "NLP", "RAG", "SBERT", "FAISS", "Rasa", "MongoDB", "Chainlit"],
-    github: null,
+    github: "https://github.com/Nagajyothi231/Conversational-AI-Chatbot",
   },
   {
     title: "Medicare Billing Analytics Dashboard",
@@ -115,55 +115,67 @@ export const ProjectsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href="https://github.com/GovardhanMowva14"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group p-6 bg-background border transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1 hover:shadow-lg ${
-                project.featured
-                  ? "border-primary/50 md:col-span-2 gradient-border hover:border-accent"
-                  : "border-border hover:border-accent/60"
-              }`}
-            >
-              <div className="flex items-center justify-between gap-3 mb-3">
-                <div className="flex items-center gap-3 flex-wrap">
-                  {project.featured && (
-                    <Badge variant="default" className="flex items-center gap-1">
-                      <Star className="w-3 h-3" />
-                      Featured
-                    </Badge>
+          {projects.map((project, index) => {
+            const hasLink = project.github !== null;
+            const href = project.github ?? "https://github.com/GovardhanMowva14";
+            const Wrapper: any = hasLink ? "a" : "div";
+            const wrapperProps = hasLink
+              ? { href, target: "_blank", rel: "noopener noreferrer" }
+              : {};
+            return (
+              <Wrapper
+                key={index}
+                {...wrapperProps}
+                className={`group p-6 bg-card border transition-all duration-300 flex flex-col rounded-lg ${
+                  hasLink ? "cursor-pointer hover:-translate-y-1 hover:shadow-lg" : ""
+                } ${
+                  project.featured
+                    ? "border-primary/40 md:col-span-2 hover:border-accent"
+                    : "border-border hover:border-accent/60"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {project.featured && (
+                      <Badge variant="default" className="flex items-center gap-1">
+                        <Star className="w-3 h-3" />
+                        Featured
+                      </Badge>
+                    )}
+                    <h3 className="text-xl font-semibold group-hover:text-accent transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                  </div>
+                  {hasLink && (
+                    <Github className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
                   )}
-                  <h3 className="text-xl font-semibold group-hover:text-accent transition-colors duration-300">
-                    {project.title}
-                  </h3>
                 </div>
-                <Github className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
-              </div>
-              <ul className="text-muted-foreground text-sm mb-4 flex-grow space-y-2">
-                {project.bullets.map((bullet, bulletIndex) => (
-                  <li key={bulletIndex} className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5">•</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-2 py-1 bg-secondary/10 text-secondary text-xs font-medium rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground/80 italic group-hover:text-accent transition-colors">
-                Click to view on GitHub →
-              </p>
-            </a>
-          ))}
+                <ul className="text-muted-foreground text-sm mb-4 flex-grow space-y-2">
+                  {project.bullets.map((bullet, bulletIndex) => (
+                    <li key={bulletIndex} className="flex items-start gap-2">
+                      <span className="text-accent mt-0.5">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-2 py-1 bg-muted text-foreground/80 text-xs font-medium rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {hasLink && (
+                  <p className="mt-4 text-xs text-muted-foreground/80 italic group-hover:text-accent transition-colors">
+                    View on GitHub →
+                  </p>
+                )}
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>
