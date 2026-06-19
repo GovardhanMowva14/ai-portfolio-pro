@@ -38,10 +38,7 @@ export const HeroSection = () => {
               <a href="#projects">View Projects</a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="/Venkata_Ganga_Govardhan_Mowva_Resume.pdf" download className="flex items-center gap-2">
-                <Download size={18} />
-                Download Resume
-              </a>
+              <a href="#contact">Get In Touch</a>
             </Button>
           </div>
 
