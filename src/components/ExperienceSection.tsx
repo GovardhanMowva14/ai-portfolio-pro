@@ -7,10 +7,10 @@ const experiences = [
     location: "Frisco, TX",
     period: "Sep 2025 – Present",
     description: [
-      "Built an agentic GRC AI pipeline using LLMs, Transformers, FAISS, improving PRC extraction accuracy by 30%",
-      "Automated regulatory document ingestion using OCR, embeddings, and MLOps (500+ documents, 20% reduction in manual work)",
-      "Developed GenAI compliance agents using BM25 + embeddings (25% improvement in query precision)",
-      "Implemented confidence scoring and validation logic to reduce false positives and improve consistency",
+      "Designed and implemented production-grade LLM-based agentic AI systems for regulatory workflows, leveraging prompt engineering, planning, and tool orchestration while demonstrating independent problem solving for ambiguous requirements",
+      "Developed a static code scanner in Java and C++ to detect vulnerabilities and map them to SOC 2, NIST, and ISO 27001 compliance frameworks",
+      "Optimized query performance using vector databases and semantic search, improving response time and retrieval accuracy by 25%",
+      "Engineered scalable data pipelines using Java microservices on AWS, leveraging automation scripting to reduce manual effort by 20% and enabling efficient processing of 500+ datasets",
     ],
   },
   {

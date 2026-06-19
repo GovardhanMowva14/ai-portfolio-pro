@@ -1,6 +1,7 @@
 import { Star, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+
+const PROFILE_GITHUB = "https://github.com/GovardhanMowva14";
 
 const projects = [
   {
@@ -27,7 +28,7 @@ const projects = [
       "Used geospatial visuals to analyze regional billing distribution",
     ],
     tags: ["Power BI", "DAX", "Excel", "Data Modeling"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "Emotion Detection using Multi-Label Classification",
@@ -39,7 +40,7 @@ const projects = [
       "Optimized with Weights & Biases tracking and hyperparameter tuning",
     ],
     tags: ["Python", "NLP", "RoBERTa", "LSTM", "LLaMA", "W&B"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "Credit Risk Prediction (American Express)",
@@ -51,7 +52,7 @@ const projects = [
       "Performed hyperparameter optimization and model comparison",
     ],
     tags: ["XGBoost", "Neural Networks", "SHAP", "Python"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "Spam Detection using Machine Learning",
@@ -63,7 +64,7 @@ const projects = [
       "Evaluated using F1-score and learning curves",
     ],
     tags: ["Python", "Scikit-learn", "TF-IDF", "NLP"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "Real-Time Hand Gesture Recognition",
@@ -73,7 +74,7 @@ const projects = [
       "Used OpenCV and MediaPipe for hand landmark detection",
     ],
     tags: ["Python", "OpenCV", "MediaPipe"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "HR Analytics – Employee Turnover",
@@ -85,7 +86,7 @@ const projects = [
       "Achieved 95% correlation with real-world HR trends",
     ],
     tags: ["SQL", "Data Analysis", "Visualization"],
-    github: null,
+    github: PROFILE_GITHUB,
   },
   {
     title: "Secure Fingerprint-Based Voting Machine",
@@ -103,13 +104,13 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 bg-card">
+    <section id="projects" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8" />
+          <div className="w-20 h-1 bg-accent mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects showcasing expertise in machine learning, 
+            A selection of projects showcasing expertise in machine learning,
             NLP, and AI system development.
           </p>
         </div>
@@ -117,27 +118,28 @@ export const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => {
             const hasLink = project.github !== null;
-            const href = project.github ?? "https://github.com/GovardhanMowva14";
             const Wrapper: any = hasLink ? "a" : "div";
             const wrapperProps = hasLink
-              ? { href, target: "_blank", rel: "noopener noreferrer" }
+              ? { href: project.github!, target: "_blank", rel: "noopener noreferrer" }
               : {};
             return (
               <Wrapper
                 key={index}
                 {...wrapperProps}
-                className={`group p-6 bg-card border transition-all duration-300 flex flex-col rounded-lg ${
-                  hasLink ? "cursor-pointer hover:-translate-y-1 hover:shadow-lg" : ""
+                className={`group relative p-6 bg-card border rounded-xl flex flex-col transition-all duration-300 backdrop-blur-sm ${
+                  hasLink
+                    ? "cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/10"
+                    : ""
                 } ${
                   project.featured
-                    ? "border-primary/40 md:col-span-2 hover:border-accent"
+                    ? "border-accent/40 md:col-span-2 hover:border-accent"
                     : "border-border hover:border-accent/60"
                 }`}
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3 flex-wrap">
                     {project.featured && (
-                      <Badge variant="default" className="flex items-center gap-1">
+                      <Badge variant="default" className="flex items-center gap-1 bg-accent text-accent-foreground">
                         <Star className="w-3 h-3" />
                         Featured
                       </Badge>
@@ -162,14 +164,14 @@ export const ProjectsSection = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-2 py-1 bg-muted text-foreground/80 text-xs font-medium rounded"
+                      className="px-2 py-1 bg-muted text-foreground/85 text-xs font-medium rounded-md border border-border/60"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 {hasLink && (
-                  <p className="mt-4 text-xs text-muted-foreground/80 italic group-hover:text-accent transition-colors">
+                  <p className="mt-4 text-xs text-muted-foreground italic group-hover:text-accent transition-colors">
                     View on GitHub →
                   </p>
                 )}
