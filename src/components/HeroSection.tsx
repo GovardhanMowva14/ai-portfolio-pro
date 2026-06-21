@@ -28,6 +28,8 @@ export const HeroSection = () => {
           className="absolute bottom-1/4 -right-24 w-[28rem] h-[28rem] rounded-full bg-[hsl(var(--gold))]/15 blur-3xl animate-float"
           style={{ animationDelay: "2s" }}
         />
+        {/* Animated AI knowledge graph */}
+        <AINetworkBackground />
       </div>
 
       {/* Content */}
