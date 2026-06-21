@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AINetworkBackground } from "@/components/AINetworkBackground";
 
 export const HeroSection = () => {
   return (
